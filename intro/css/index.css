@@ -1,6 +1,9 @@
 *{
 	box-sizing: border-box;
  }
+ .label{
+	 font-weight: bold;
+ }
 
 body{
 	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -86,7 +89,7 @@ label{
 }
 
 .campo-medio{
-	display: inline-block;
+	display: block;
 	padding-right: .5em;
 }
 
@@ -135,4 +138,8 @@ button[disabled=disabled], button:disabled {
 
 .paciente-invalido{
 	background-color: lightcoral;
+}
+
+#mensagens-erro{
+	color: red;
 }
