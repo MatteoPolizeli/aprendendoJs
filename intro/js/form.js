@@ -9,24 +9,29 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
         var paciente = obtemPacienteDoForm(form);
 
         // cria a tr e td do do paciente
-        var pacienteTr = montaTr(paciente);
         
         var erros = validaPaciente(paciente);
         console.log(erros);
-
+        
         if(erros.length > 0){
-         exibeMensagensDeErro(erros);
+            exibeMensagensDeErro(erros);
             return;         
         }
-        // adiciona o paciente na tabela
-        var tabela = document.querySelector("#tabela-pacientes");
-        tabela.appendChild(pacienteTr);
+        
+        adicionaPacienteNaTabela(paciente);
 
         form.reset();
         var mensagensErro = document.querySelector("#mensagens-erro")
         mensagensErro.innerHTML = ""
-});
-
+        
+    });
+    function adicionaPacienteNaTabela(paciente){
+        var pacienteTr = montaTr(paciente);
+        // adiciona o paciente na tabela
+        var tabela = document.querySelector("#tabela-pacientes");
+        tabela.appendChild(pacienteTr);
+    }
+    
 function exibeMensagensDeErro(erros){
     var ul = document.querySelector("#mensagens-erro")
     ul.innerHTML = "";
